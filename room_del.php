@@ -11,6 +11,7 @@ if (!(isset($_SESSION['login_true']))) {
 if (isset($_SESSION['login_true'])) {
 ?>
     <div class="col">
+        <a href="?view=room_list" class="btn btn-primary">Back</a>
         <a href="?view=logout" class="btn btn-danger">Logout</a>
     </div>
 <?php

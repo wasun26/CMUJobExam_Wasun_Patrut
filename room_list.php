@@ -33,16 +33,16 @@ if (isset($_SESSION['login_true'])) {
     List of examination room
 </header>
 
-<div class="d-flex justify-content-around">
+<div class="row row-cols-1 row-cols-md-3 g-4">
     <?php
     $sql = "SELECT * FROM room";
     $result = $conn->query($sql);
     while ($dbarr = mysqli_fetch_array($result, MYSQLI_BOTH)) {
     ?>
-        <div class="text-center">
+        <div class="col text-center">
             <div class="card bg-secondary" style="width: 10rem;">
                 <img class="rounded-circle img-fluid mx-auto d-block" src="./img/home.png" alt="Card image">
-                <div class="card-body align-content-center">
+                <div class="card-body">
                     <a href="?view=room_edit&rid=<?php echo ($dbarr['id']); ?>" class="stretched-link nav-link text-dark">
                         <h4 class=" card-title"><?php echo ($dbarr['room_name']); ?></h4>
                         <h3 class="card-title"><?php echo ($dbarr['number_of_student']); ?></h3>
